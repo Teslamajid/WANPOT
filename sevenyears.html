@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>7 Years Financial Projection</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+    }
+
+    .slide-container {
+      max-width: 600px;
+      margin: 20px auto;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    canvas {
+      max-width: 100%;
+    }
+  </style>
+</head>
+<body>
+  <div class="slide-container">
+    <h2>7 Years Financial Projection</h2>
+
+    <!-- Revenue Chart -->
+    <canvas id="revenue-chart-7years"></canvas>
+
+    <script>
+      // Data for the bar chart
+      var revenueData7Years = {
+        labels: ['Transaction Fees', 'Subscription Revenue', 'Rental Fees', 'Commission on Global Services'],
+        datasets: [{
+          label: 'Revenue',
+          data: [5000000, 1000000, 400000, 600000],
+          backgroundColor: 'rgba(75, 192, 192, 0.8)',
+          borderWidth: 1
+        }]
+      };
+
+      // Get the context of the canvas element
+      var ctx7Years = document.getElementById('revenue-chart-7years').getContext('2d');
+
+      // Create the bar chart
+      var revenueChart7Years = new Chart(ctx7Years, {
+        type: 'bar',
+        data: revenueData7Years,
+        options: chartOptions
+      });
+    </script>
+
+    <!-- Expenses Chart -->
+    <canvas id="expenses-chart-7years"></canvas>
+
+    <script>
+      // Data for the bar chart
+      var expensesData7Years = {
+        labels: ['Technology Infrastructure', 'Marketing and Promotion', 'Operations and Administration', 'Partnerships and Collaborations'],
+        datasets: [{
+          label: 'Expenses',
+          data: [800000, 1200000, 600000, 480000],
+          backgroundColor: 'rgba(255, 99, 132, 0.8)',
+          borderWidth: 1
+        }]
+      };
+
+      // Get the context of the canvas element
+      var expensesCtx7Years = document.getElementById('expenses-chart-7years').getContext('2d');
+
+      // Create the bar chart
+      var expensesChart7Years = new Chart(expensesCtx7Years, {
+        type: 'bar',
+        data: expensesData7Years,
+        options: chartOptions
+      });
+    </script>
+
+    <!-- Profit Chart -->
+    <canvas id="profit-chart-7years"></canvas>
+
+    <script>
+      // Data for the bar chart
+      var profitData7Years = {
+        labels: ['Profit'],
+        datasets: [{
+          label: 'Profit',
+          data: [3920000],
+          backgroundColor: 'rgba(54, 162, 235, 0.8)',
+          borderWidth: 1
+        }]
+      };
+
+      // Get the context of the canvas element
+      var profitCtx7Years = document.getElementById('profit-chart-7years').getContext('2d');
+
+      // Create the bar chart
+      var profitChart7Years = new Chart(profitCtx7Years, {
+        type: 'bar',
+        data: profitData7Years,
+        options: chartOptions
+      });
+    </script>
+  </div>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Add these in the head section of your HTML file -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <title>6 Months Financial Projection</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+    }
+
+    .slide-container {
+      max-width: 600px;
+      margin: 20px auto;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    canvas {
+      max-width: 100%;
+    }
+  </style>
+</head>
+<body>
+  <div class="slide-container">
+    <h2>6 Months Financial Projection</h2>
+    
+    <!-- Revenue Chart -->
+    <canvas id="revenue-chart-6months"></canvas>
+
+    <!-- Expenses Chart -->
+    <canvas id="expenses-chart-6months"></canvas>
+
+    <!-- Profit Chart -->
+    <canvas id="profit-chart-6months"></canvas>
+  </div>
+
+  <script>
+    // Data for the charts
+    var revenueData = [200000, 50000, 20000, 30000];
+    var expensesData = [50000, 70000, 30000, 20000];
+    var profitData = [130000];
+
+    // Create charts
+    createBarChart('revenue-chart-6months', 'Revenue', revenueData);
+    createBarChart('expenses-chart-6months', 'Expenses', expensesData);
+    createBarChart('profit-chart-6months', 'Profit', profitData);
+
+    // Function to create a bar chart
+    function createBarChart(chartId, label, data) {
+      var ctx = document.getElementById(chartId).getContext('2d');
+      new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: [label],
+          datasets: [{
+            label: label,
+            data: data,
+            backgroundColor: ['#3498db', '#e74c3c', '#2ecc71', '#f39c12'],
+          }]
+        },
+        options: {
+          scales: {
+            y: {
+              beginAtZero: true
+            }
+          }
+        }
+      });
+    }
+  </script>
+</body>
+</html>

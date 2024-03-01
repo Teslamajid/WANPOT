@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>1 Year Financial Projection</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+    }
+
+    .slide-container {
+      max-width: 600px;
+      margin: 20px auto;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    canvas {
+      max-width: 100%;
+    }
+  </style>
+</head>
+<body>
+  <div class="slide-container">
+    <h2>1 Year Financial Projection</h2>
+
+    <!-- Revenue Chart -->
+    <canvas id="revenue-chart-1year"></canvas>
+
+    <script>
+      // Data for the bar chart
+      var revenueData = {
+        labels: ['Transaction Fees', 'Subscription Revenue', 'Rental Fees', 'Commission on Global Services'],
+        datasets: [{
+          label: 'Revenue',
+          data: [500000, 100000, 40000, 60000],
+          backgroundColor: 'rgba(75, 192, 192, 0.8)',
+          borderWidth: 1
+        }]
+      };
+
+      // Bar chart options
+      var chartOptions = {
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      };
+
+      // Get the context of the canvas element
+      var ctx = document.getElementById('revenue-chart-1year').getContext('2d');
+
+      // Create the bar chart
+      var revenueChart = new Chart(ctx, {
+        type: 'bar',
+        data: revenueData,
+        options: chartOptions
+      });
+    </script>
+
+    <!-- Expenses Chart -->
+    <canvas id="expenses-chart-1year"></canvas>
+
+    <script>
+      // Data for the bar chart
+      var expensesData = {
+        labels: ['Technology Infrastructure', 'Marketing and Promotion', 'Operations and Administration', 'Partnerships and Collaborations'],
+        datasets: [{
+          label: 'Expenses',
+          data: [80000, 120000, 50000, 40000],
+          backgroundColor: 'rgba(255, 99, 132, 0.8)',
+          borderWidth: 1
+        }]
+      };
+
+      // Get the context of the canvas element
+      var expensesCtx = document.getElementById('expenses-chart-1year').getContext('2d');
+
+      // Create the bar chart
+      var expensesChart = new Chart(expensesCtx, {
+        type: 'bar',
+        data: expensesData,
+        options: chartOptions
+      });
+    </script>
+
+    <!-- Profit Chart -->
+    <canvas id="profit-chart-1year"></canvas>
+
+    <script>
+      // Data for the bar chart
+      var profitData = {
+        labels: ['Profit'],
+        datasets: [{
+          label: 'Profit',
+          data: [410000],
+          backgroundColor: 'rgba(54, 162, 235, 0.8)',
+          borderWidth: 1
+        }]
+      };
+
+      // Get the context of the canvas element
+      var profitCtx = document.getElementById('profit-chart-1year').getContext('2d');
+
+      // Create the bar chart
+      var profitChart = new Chart(profitCtx, {
+        type: 'bar',
+        data: profitData,
+        options: chartOptions
+      });
+    </script>
+  </div>
+</body>
+</html>
